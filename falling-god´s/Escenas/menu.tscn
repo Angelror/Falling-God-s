@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxori84bq03ht"]
+
+[ext_resource type="Script" path="res://script/menu.gd" id="1_86wp3"]
+[ext_resource type="Texture2D" uid="uid://corp2u2o2vcgq" path="res://Assets/boton_1-removebg-preview.png" id="2_doon0"]
+[ext_resource type="Texture2D" uid="uid://byibqxrie6ucv" path="res://Assets/boton_2-removebg-preview.png" id="3_qh34c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvvrp"]
+font_size = 62
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_86wp3")
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 290.0
+offset_right = 829.0
+offset_bottom = 355.0
+
+[node name="Play_button" type="Sprite2D" parent="Play"]
+position = Vector2(137, 29)
+scale = Vector2(0.266382, 0.227781)
+texture = ExtResource("2_doon0")
+
+[node name="Play" type="Label" parent="Play"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 19.0
+offset_right = 157.0
+offset_bottom = 42.0
+text = "Play
+"
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 401.0
+offset_right = 827.0
+offset_bottom = 463.0
+
+[node name="Quit Button" type="Sprite2D" parent="Quit"]
+position = Vector2(135, 31)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("3_qh34c")
+
+[node name="Quit" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 16.0
+offset_right = 156.0
+offset_bottom = 39.0
+text = "Quit
+"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 98.0
+offset_right = 906.0
+offset_bottom = 184.0
+text = "Falling God´s"
+label_settings = SubResource("LabelSettings_nvvrp")
+
+[connection signal="pressed" from="Play" to="." method="_button_pressed_menu"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

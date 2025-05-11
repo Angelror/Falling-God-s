@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://db2d28k02bd5y"]
+
+[ext_resource type="Script" path="res://script/personajes_2.gd" id="1_g5do5"]
+[ext_resource type="Texture2D" uid="uid://corp2u2o2vcgq" path="res://Assets/boton_1-removebg-preview.png" id="1_hw1v8"]
+[ext_resource type="Script" path="res://script/enemigos_2.gd" id="3_kvnuy"]
+[ext_resource type="Script" path="res://script/ciudades.gd" id="4_2x16t"]
+[ext_resource type="Script" path="res://script/jefes_2.gd" id="5_rc8lh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkaqr"]
+size = Vector2(845.864, 192.982)
+
+[sub_resource type="LabelSettings" id="LabelSettings_axgp6"]
+font_size = 60
+
+[node name="Consulta" type="Node2D"]
+
+[node name="Personajes2" type="Area2D" parent="."]
+position = Vector2(243, 80.5)
+scale = Vector2(0.266, 0.228)
+script = ExtResource("1_g5do5")
+
+[node name="Personajes" type="Sprite2D" parent="Personajes2"]
+texture = ExtResource("1_hw1v8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personajes2"]
+position = Vector2(-5.63989, 24.1227)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="Personajes2" type="PopupMenu" parent="Personajes2"]
+position = Vector2i(130, 113)
+size = Vector2i(225, 265)
+
+[node name="Personajes3" type="Label" parent="Personajes2"]
+offset_left = -157.895
+offset_top = -32.8947
+offset_right = 159.105
+offset_bottom = 50.1053
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Personajes
+"
+label_settings = SubResource("LabelSettings_axgp6")
+
+[node name="Enemigos2" type="Area2D" parent="."]
+position = Vector2(243, 80.5)
+scale = Vector2(0.266, 0.228)
+script = ExtResource("3_kvnuy")
+
+[node name="Enemigos" type="Sprite2D" parent="Enemigos2"]
+position = Vector2(947.368, 4.38596)
+texture = ExtResource("1_hw1v8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemigos2"]
+position = Vector2(947.368, 28.5086)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="PopupMenu" type="PopupMenu" parent="Enemigos2"]
+auto_translate_mode = 1
+position = Vector2i(385, 113)
+size = Vector2i(225, 265)
+
+[node name="Enemigos2" type="Label" parent="Enemigos2"]
+offset_left = 823.308
+offset_top = -19.7368
+offset_right = 1140.31
+offset_bottom = 63.2632
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Enemigos"
+label_settings = SubResource("LabelSettings_axgp6")
+
+[node name="Ciudades" type="Area2D" parent="."]
+position = Vector2(243, 80.5)
+scale = Vector2(0.266, 0.228)
+script = ExtResource("4_2x16t")
+
+[node name="Ciudad" type="Sprite2D" parent="Ciudades"]
+position = Vector2(1902.26, 4.38596)
+texture = ExtResource("1_hw1v8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ciudades"]
+position = Vector2(1894.74, 24.1227)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="PopupMenu" type="PopupMenu" parent="Ciudades"]
+auto_translate_mode = 1
+position = Vector2i(635, 113)
+size = Vector2i(225, 265)
+
+[node name="Ciudad2" type="Label" parent="Ciudades"]
+offset_left = 1793.23
+offset_top = -24.1228
+offset_right = 2110.23
+offset_bottom = 58.8772
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Ciudad"
+label_settings = SubResource("LabelSettings_axgp6")
+
+[node name="Jefes2" type="Area2D" parent="."]
+position = Vector2(243, 80.5)
+scale = Vector2(0.266, 0.228)
+script = ExtResource("5_rc8lh")
+
+[node name="Jefes" type="Sprite2D" parent="Jefes2"]
+position = Vector2(2849.62, 6.57886)
+texture = ExtResource("1_hw1v8")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Jefes2"]
+position = Vector2(2845.86, 24.1227)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="PopupMenu" type="PopupMenu" parent="Jefes2"]
+auto_translate_mode = 1
+position = Vector2i(889, 113)
+size = Vector2i(225, 265)
+
+[node name="Jefes2" type="Label" parent="Jefes2"]
+offset_left = 2804.51
+offset_top = -19.7368
+offset_right = 3121.51
+offset_bottom = 63.2632
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Jefes"
+label_settings = SubResource("LabelSettings_axgp6")
+
+[connection signal="mouse_entered" from="Personajes2" to="Personajes2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Enemigos2" to="Enemigos2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Ciudades" to="Ciudades" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Jefes2" to="Jefes2" method="_on_mouse_entered"]
