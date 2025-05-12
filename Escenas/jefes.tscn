@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://c21xdxedqvoxu"]
+
+[ext_resource type="Texture2D" uid="uid://dxm2qm62kt30y" path="res://Assets/Hoja rota.jpg" id="1_rofkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eee7p"]
+size = Vector2(181, 20)
+
+[node name="Jefes" type="Node2D"]
+
+[node name="HojaRota" type="Sprite2D" parent="."]
+position = Vector2(222, 594)
+scale = Vector2(0.287109, 1)
+texture = ExtResource("1_rofkr")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Label" type="Label" parent="Area2D"]
+offset_left = 154.0
+offset_top = 210.0
+offset_right = 244.0
+offset_bottom = 233.0
+text = "Personaje 1
+"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(197, 223)
+shape = SubResource("RectangleShape2D_eee7p")
+
+[node name="PopupPanel" type="PopupPanel" parent="Area2D"]
+visible = true
+
+[node name="Label" type="Label" parent="Area2D/PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0

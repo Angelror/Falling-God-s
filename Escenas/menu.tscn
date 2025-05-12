@@ -1,0 +1,296 @@
+[gd_scene load_steps=19 format=3 uid="uid://dxori84bq03ht"]
+
+[ext_resource type="Script" path="res://script/menu.gd" id="1_86wp3"]
+[ext_resource type="Texture2D" uid="uid://corp2u2o2vcgq" path="res://Assets/boton_1-removebg-preview.png" id="2_doon0"]
+[ext_resource type="Texture2D" uid="uid://byibqxrie6ucv" path="res://Assets/boton_2-removebg-preview.png" id="3_qh34c"]
+[ext_resource type="Texture2D" uid="uid://gftgp31j0gg3" path="res://Assets/download (3).png" id="4_u0ohc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_svuxq"]
+
+[sub_resource type="Animation" id="Animation_xxjfg"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Play/Play_button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(137, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play/Play:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(113, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_5mk5k"]
+resource_name = "move_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Play/Play_button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(137, 29), Vector2(-999, 29)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play/Play:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(113, 22), Vector2(-999, 22)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6rtg"]
+_data = {
+"RESET": SubResource("Animation_xxjfg"),
+"move_left": SubResource("Animation_5mk5k")
+}
+
+[sub_resource type="Animation" id="Animation_c272p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quit Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(135, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(116, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_y4rt4"]
+resource_name = "left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Quit Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(135, 31), Vector2(-999, 31)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(116, 16), Vector2(-999, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_syww0"]
+_data = {
+"RESET": SubResource("Animation_c272p"),
+"left": SubResource("Animation_y4rt4")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_nvvrp"]
+font_size = 62
+
+[sub_resource type="Animation" id="Animation_6j0ll"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(507, 98)]
+}
+
+[sub_resource type="Animation" id="Animation_6haha"]
+resource_name = "title_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(507, 98), Vector2(-999, 98)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ttu5j"]
+_data = {
+"RESET": SubResource("Animation_6j0ll"),
+"title_left": SubResource("Animation_6haha")
+}
+
+[sub_resource type="Animation" id="Animation_nxova"]
+resource_name = "Fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d5axo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dtexe"]
+_data = {
+"Fade_out": SubResource("Animation_nxova"),
+"RESET": SubResource("Animation_d5axo")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_86wp3")
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 290.0
+offset_right = 809.0
+offset_bottom = 346.0
+
+[node name="Play_button" type="Sprite2D" parent="Play"]
+position = Vector2(137, 29)
+scale = Vector2(0.266382, 0.227781)
+texture = ExtResource("2_doon0")
+
+[node name="Play" type="Label" parent="Play"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 22.0
+offset_right = 153.0
+offset_bottom = 45.0
+text = "Play
+"
+label_settings = SubResource("LabelSettings_svuxq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Play"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_i6rtg")
+}
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 401.0
+offset_right = 827.0
+offset_bottom = 463.0
+
+[node name="Quit Button" type="Sprite2D" parent="Quit"]
+position = Vector2(135, 31)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("3_qh34c")
+
+[node name="Quit" type="Label" parent="Quit"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 16.0
+offset_right = 156.0
+offset_bottom = 39.0
+text = "Quit
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Quit"]
+libraries = {
+"": SubResource("AnimationLibrary_syww0")
+}
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 98.0
+offset_right = 906.0
+offset_bottom = 184.0
+text = "Falling God´s"
+label_settings = SubResource("LabelSettings_nvvrp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+libraries = {
+"": SubResource("AnimationLibrary_ttu5j")
+}
+
+[node name="Fondo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(964.5, 740.5)
+scale = Vector2(13.0743, 10.0473)
+texture = ExtResource("4_u0ohc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Fondo"]
+libraries = {
+"": SubResource("AnimationLibrary_dtexe")
+}
+autoplay = "Fade_out"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

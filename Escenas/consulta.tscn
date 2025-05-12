@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://db2d28k02bd5y"]
+
+[ext_resource type="Texture2D" uid="uid://corp2u2o2vcgq" path="res://Assets/boton_1-removebg-preview.png" id="1_hw1v8"]
+
+[node name="Consulta" type="Node2D"]
+
+[node name="Personajes" type="TextureButton" parent="."]
+offset_left = 164.0
+offset_top = 75.0
+offset_right = 334.0
+offset_bottom = 113.0
+
+[node name="Persnajes" type="Sprite2D" parent="Personajes"]
+position = Vector2(84, 16)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_hw1v8")
+
+[node name="Personajes" type="Label" parent="Personajes"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 7.0
+offset_right = 127.0
+offset_bottom = 30.0
+text = "Personajes"
+
+[node name="Enemigos" type="TextureButton" parent="."]
+offset_left = 350.0
+offset_top = 75.0
+offset_right = 520.0
+offset_bottom = 113.0
+
+[node name="Enemigos" type="Sprite2D" parent="Enemigos"]
+position = Vector2(85, 16)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_hw1v8")
+
+[node name="Enemigos2" type="Label" parent="Enemigos"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 7.0
+offset_right = 122.0
+offset_bottom = 30.0
+text = "Enemigos"
+
+[node name="Ciudades" type="TextureButton" parent="."]
+offset_left = 538.0
+offset_top = 75.0
+offset_right = 708.0
+offset_bottom = 113.0
+
+[node name="Ciudades" type="Sprite2D" parent="Ciudades"]
+position = Vector2(85.0001, 16)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_hw1v8")
+
+[node name="Ciudades2" type="Label" parent="Ciudades"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 8.0
+offset_right = 123.0
+offset_bottom = 31.0
+text = "Ciudades"
+
+[node name="Jefes" type="TextureButton" parent="."]
+offset_left = 725.0
+offset_top = 75.0
+offset_right = 895.0
+offset_bottom = 113.0
+
+[node name="Jefes" type="Sprite2D" parent="Jefes"]
+position = Vector2(85.0001, 16)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_hw1v8")
+
+[node name="Label" type="Label" parent="Jefes"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 7.0
+offset_right = 103.0
+offset_bottom = 30.0
+text = "Jefes"

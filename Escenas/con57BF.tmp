@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvwowktde10nv"]
+
+[ext_resource type="Texture2D" uid="uid://corp2u2o2vcgq" path="res://Assets/boton_1-removebg-preview.png" id="1_hw1v8"]
+
+[sub_resource type="GDScript" id="GDScript_768mf"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+
+func _on_personajes_mouse_entered() -> void:
+	print(\"EL mouse entro al area\")
+
+
+func _on_personajes_mouse_exited() -> void:
+	print(\"El mouse salio del area\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkaqr"]
+size = Vector2(845.864, 192.982)
+
+[node name="Consulta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 68.0
+offset_top = 1.0
+offset_right = 68.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_768mf")
+
+[node name="Personajes" type="Sprite2D" parent="."]
+position = Vector2(243, 80.5)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("1_hw1v8")
+
+[node name="Personajes" type="Area2D" parent="Personajes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personajes/Personajes"]
+position = Vector2(-5.63977, 24.1227)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="Enemigos" type="Sprite2D" parent="."]
+position = Vector2(495, 81.5)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("1_hw1v8")
+
+[node name="Enemigos" type="Area2D" parent="Enemigos"]
+position = Vector2(-947.368, -4.38596)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Enemigos/Enemigos"]
+position = Vector2(947.368, 28.5086)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="Ciudad" type="Sprite2D" parent="."]
+position = Vector2(749, 81.5)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("1_hw1v8")
+
+[node name="Ciudades" type="Area2D" parent="Ciudad"]
+position = Vector2(-1902.26, -4.38596)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ciudad/Ciudades"]
+position = Vector2(1894.74, 24.1227)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[node name="Jefes" type="Sprite2D" parent="."]
+position = Vector2(1001, 82)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("1_hw1v8")
+
+[node name="Jefes" type="Area2D" parent="Jefes"]
+position = Vector2(-2849.62, -6.57886)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Jefes/Jefes"]
+position = Vector2(2845.86, 24.1227)
+shape = SubResource("RectangleShape2D_pkaqr")
+
+[connection signal="mouse_entered" from="Personajes/Personajes" to="." method="_on_personajes_mouse_entered"]
+[connection signal="mouse_exited" from="Personajes/Personajes" to="." method="_on_personajes_mouse_exited"]

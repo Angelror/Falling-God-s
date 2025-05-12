@@ -1,0 +1,207 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0pdupofcms6i"]
+
+[ext_resource type="Script" path="res://script/sub_menu.gd" id="1_osmdv"]
+[ext_resource type="Texture2D" uid="uid://corp2u2o2vcgq" path="res://Assets/boton_1-removebg-preview.png" id="2_7nge2"]
+[ext_resource type="Texture2D" uid="uid://byibqxrie6ucv" path="res://Assets/boton_2-removebg-preview.png" id="3_ypqy7"]
+
+[sub_resource type="Animation" id="Animation_e5gwg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("New Game Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(999, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("New Game:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(999, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_5joji"]
+resource_name = "button_new_game_right"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("New Game Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(999, 17), Vector2(73, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("New Game:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(999, 8), Vector2(32, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_th330"]
+_data = {
+"RESET": SubResource("Animation_e5gwg"),
+"button_new_game_right": SubResource("Animation_5joji")
+}
+
+[sub_resource type="Animation" id="Animation_g1e3e"]
+resource_name = "Fade out"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_noou7"]
+_data = {
+"Fade out": SubResource("Animation_g1e3e")
+}
+
+[sub_resource type="Animation" id="Animation_65sw2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Continuar Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(999, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Continuar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(999, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_uqjse"]
+resource_name = "button_continue_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Continuar Button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(999, 24), Vector2(74, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Continuar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(999, 8), Vector2(36, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltpx2"]
+_data = {
+"RESET": SubResource("Animation_65sw2"),
+"button_continue_left": SubResource("Animation_uqjse")
+}
+
+[node name="sub menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osmdv")
+
+[node name="New Game" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1011.0
+offset_top = 70.0
+offset_right = 1161.0
+offset_bottom = 112.0
+
+[node name="New Game Button" type="Sprite2D" parent="New Game"]
+position = Vector2(999, 17)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("2_7nge2")
+
+[node name="New Game" type="Label" parent="New Game"]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 8.0
+offset_right = 1084.0
+offset_bottom = 31.0
+text = "New Game"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="New Game"]
+libraries = {
+"": SubResource("AnimationLibrary_th330")
+}
+autoplay = "button_new_game_right"
+
+[node name="Fade out" type="AnimationPlayer" parent="New Game"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_noou7")
+}
+
+[node name="Continuar" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1010.0
+offset_top = 143.0
+offset_right = 1158.0
+offset_bottom = 191.0
+metadata/_edit_group_ = true
+
+[node name="Continuar Button" type="Sprite2D" parent="Continuar"]
+position = Vector2(999, 24)
+scale = Vector2(0.266, 0.228)
+texture = ExtResource("3_ypqy7")
+
+[node name="Continuar" type="Label" parent="Continuar"]
+layout_mode = 0
+offset_left = 999.0
+offset_top = 8.0
+offset_right = 1070.0
+offset_bottom = 31.0
+text = "Continue
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Continuar"]
+libraries = {
+"": SubResource("AnimationLibrary_ltpx2")
+}
+autoplay = "button_continue_left"
+
+[connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Continuar" to="." method="_on_continuar_pressed"]
